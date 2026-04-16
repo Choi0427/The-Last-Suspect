@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+[Serializable]
+public class EvidenceInventoryEntry
+{
+    public string evidenceName;
+
+    [TextArea(3, 8)]
+    public string description;
+
+    public Sprite thumbnail;
+    public Sprite detailImage;
+}
+
+public class EvidenceInventoryUI : MonoBehaviour
+{
+    [Header("Popup")]
+    [SerializeField] private GameObject popupRoot;
+    [SerializeField] private bool hideOnStart = true;
+
+    [Header("Content")]
+    [SerializeField] private TMP_Text evidenceNameText;
+    [SerializeField] private TMP_Text descriptionText;
+    [SerializeField] private Image detailImage;
+
+    [Header("Entries")]
+    [SerializeField] private List<EvidenceInventoryEntry> evidenceEntries = new List<EvidenceInventoryEntry>();
+
+    private int currentIndex = -1;
+
+    private void Start()
+    {
+        if (hideOnStart)
+        {
+            SetPopupVisible(false);
+        }
+
+        if (evidenceEntries.Count > 0)
+        {
+            ShowEvidence(0);
+        }
+    }
+
+    public void Open()
+    {
+        SetPopupVisible(true);
+
+        if (evidenceEntries.Count > 0)
+        {
+            ShowEvidence(currentIndex >= 0 ? currentIndex : 0);
+        }
+        else
+        {
+            ClearDisplay();
+        }
+    }
+
+    public void Close()
+    {
+        SetPopupVisible(false);
+    }
+
+    public void ShowEvidence(int index)
+    {
+        if (evidenceEntries.Count == 0)
+        {
+            ClearDisplay();
+            return;
+        }
+
+        currentIndex = Mathf.Clamp(index, 0, evidenceEntries.Count - 1);
+        EvidenceInventoryEntry entry = evidenceEntries[currentIndex];
+
+        if (evidenceNameText != null)
+        {
+            evidenceNameText.text = entry.evidenceName;
+        }
+
+        if (descriptionText != null)
+        {
+            descriptionText.text = entry.description;
+        }
+
+        if (detailImage != null)
+        {
+            detailImage.sprite = entry.detailImage != null ? entry.detailImage : entry.thumbnail;
+            detailImage.enabled = detailImage.sprite != null;
+        }
+    }
+
+    private void ClearDisplay()
+    {
+        if (evidenceNameText != null)
+        {
+            evidenceNameText.text = string.Empty;
+        }
+
+        if (descriptionText != null)
+        {
+            descriptionText.text = string.Empty;
+        }
+
+        if (detailImage != null)
+        {
+            detailImage.sprite = null;
+            detailImage.enabled = false;
+        }
+    }
+
+    private void SetPopupVisible(bool shouldShow)
+    {
+        GameObject target = popupRoot != null ? popupRoot : gameObject;
+        target.SetActive(shouldShow);
+    }
+}
