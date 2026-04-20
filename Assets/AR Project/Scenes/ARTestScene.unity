@@ -651,6 +651,8 @@ GameObject:
   - component: {fileID: 2119871601}
   - component: {fileID: 2119871606}
   - component: {fileID: 2119871607}
+  - component: {fileID: 2119871608}
+  - component: {fileID: 2119871609}
   m_Layer: 0
   m_Name: XR Origin (Mobile AR)
   m_TagString: Untagged
@@ -750,14 +752,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0e4e20db2e5e64399530234f5e010a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _raycastManager: {fileID: 2119871601}
   _planeManager: {fileID: 2119871602}
+  _anchorManager: {fileID: 2119871608}
+  _arCamera: {fileID: 1549383404}
   evidencePrefabs:
   - {fileID: 6689992741278781415, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
   - {fileID: 7733875955768408218, guid: 2e16046ebcbcb6742a86569d82e56cce, type: 3}
   - {fileID: 4257412417454173071, guid: d5615d616019430d9c2e8727e71c97fb, type: 3}
   - {fileID: 4922582553321831162, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
   - {fileID: 919132149155446097, guid: f396e3429a4864fc2ad497cb3ce5fe2c, type: 3}
+  - {fileID: 919132149155446097, guid: f396e3429a4864fc2ad497cb3ce5fe2c, type: 3}
+  - {fileID: 919132149155446097, guid: f396e3429a4864fc2ad497cb3ce5fe2c, type: 3}
+  _minSpawnDistance: 1.75
+  _minSpawnAngle: 40
+  _minPlaneArea: 0.15
+  _maxSpawnDistanceFromCamera: 2.5
+  _heightOffset: 0.03
+  _uniformScale: 3
+  _useCameraForwardPlacement: 0
+  _debugForwardDistance: 1
+  _lookAtCamera: 1
+  _hideAllPlanesAfterEnoughSpawn: 0
+  _hideAllPlanesAfterPlacementCount: 1
 --- !u!114 &2119871607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +786,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53275793759ba9b4bbc9afdf86be4a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceTouchHandler
+--- !u!114 &2119871608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119871600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728ad7fae8e460a4ba41265c7308d757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.ARFoundation::UnityEngine.XR.ARFoundation.ARAnchorManager
+  <trackablesChanged>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  m_AnchorPrefab: {fileID: 0}
+--- !u!114 &2119871609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119871600}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d028d57a5687b9d4e857f6a19f54f196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EvidencePlacementManage
+  _raycastManager: {fileID: 2119871601}
+  _planeManager: {fileID: 2119871602}
+  evidencePrefabs:
+  - {fileID: 6689992741278781415, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
+  - {fileID: 5811970893536397571, guid: 13241d599ff10413498d04c6d683ca10, type: 3}
+  - {fileID: 2668992677333385299, guid: 98cdacc32bf0d8d469092762a7263c4b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
