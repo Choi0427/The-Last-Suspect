@@ -267,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731247520}
   - component: {fileID: 731247519}
+  - component: {fileID: 731247521}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -354,6 +355,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &731247521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731247518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &1403806403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1049,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1220,7 +1250,7 @@ MonoBehaviour:
   - cue: 1
     clip: {fileID: 8300000, guid: f50659a736160c34a847afbeaf490f76, type: 3}
   - cue: 2
-    clip: {fileID: 8300000, guid: 6d04fd931840cfc49b2c174c2e88f950, type: 3}
+    clip: {fileID: 8300000, guid: 38ee166d8af14e54884523b77d1c58a0, type: 3}
   bgmClips:
   - cue: 0
     clip: {fileID: 8300000, guid: 14ce2124595d96a40b573cdebd7ff1cb, type: 3}
@@ -1229,11 +1259,11 @@ MonoBehaviour:
   - cue: 2
     clip: {fileID: 8300000, guid: 3a6e2949d2b0d66479f78742fc7f7595, type: 3}
   - cue: 3
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: c79aacd55a9b8f346b9aee3d61ca97b7, type: 3}
   - cue: 4
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 9a26de87d52ab4643b9595efd7bc4e30, type: 3}
   bgmVolume: 0.6
-  sfxVolume: 1
+  sfxVolume: 0.5
 --- !u!4 &1993657929
 Transform:
   m_ObjectHideFlags: 0

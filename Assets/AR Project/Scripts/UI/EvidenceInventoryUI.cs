@@ -21,6 +21,7 @@ public class EvidenceInventoryUI : MonoBehaviour
     [Header("Popup")]
     [SerializeField] private GameObject popupRoot;
     [SerializeField] private bool hideOnStart = true;
+    [SerializeField] private List<GameObject> uiToHideWhileOpen = new List<GameObject>();
 
     [Header("Content")]
     [SerializeField] private TMP_Text evidenceNameText;
@@ -61,6 +62,11 @@ public class EvidenceInventoryUI : MonoBehaviour
 
     public void Close()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUiClick();
+        }
+
         SetPopupVisible(false);
     }
 
@@ -70,6 +76,11 @@ public class EvidenceInventoryUI : MonoBehaviour
         {
             ClearDisplay();
             return;
+        }
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUiClick();
         }
 
         currentIndex = Mathf.Clamp(index, 0, evidenceEntries.Count - 1);
@@ -115,5 +126,13 @@ public class EvidenceInventoryUI : MonoBehaviour
     {
         GameObject target = popupRoot != null ? popupRoot : gameObject;
         target.SetActive(shouldShow);
+
+        foreach (GameObject uiObject in uiToHideWhileOpen)
+        {
+            if (uiObject != null)
+            {
+                uiObject.SetActive(!shouldShow);
+            }
+        }
     }
 }

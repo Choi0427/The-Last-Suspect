@@ -432,7 +432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 208, y: -498}
+  m_AnchoredPosition: {x: 212, y: -490}
   m_SizeDelta: {x: 255.03, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &131203793
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DETECTIVE
+  m_text: KANE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffed048451191614b9d4112ea0914815, type: 2}
   m_sharedMaterial: {fileID: -4408715858041696421, guid: ffed048451191614b9d4112ea0914815, type: 2}
@@ -482,8 +482,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -719,35 +719,21 @@ MonoBehaviour:
   continueIndicator: {fileID: 65937482}
   dialogueLines:
   - speakerName: Kane
-    message: 'Alright... here we are. Another long night I was hoping to avoid.
-
-      Office
-      building, top floor. One body inside, one gun.
-
-      On the surface, it looks
-      simple. Too simple.'
+    message: Alright. Office building, top floor. One body, one gun. On paper, simple
+      case.
   - speakerName: Kane
-    message: 'Man in his late 60s. Former prosecutor. Name: Han Jae-min.
-
-      They
-      say he was about to retire. Finally leave all this behind.
-
-      He was working
-      on a book. About an old case no one likes to talk about.'
+    message: "Victim: male, late 60s, former prosecutor, name\u2019s Kim Jae\u2011min.
+      He was about to retire and was writing a book about an old case no one cares."
   - speakerName: Kane
-    message: "He kept saying, 'This time, I\u2019ll write it the way it really happened.'\r\nFunny
-      thing... that line never reached the official reports."
+    message: "He kept saying, \u2018This time, I\u2019ll write the truth.\u2019 Someone
+      decided that book should never be finished."
   - speakerName: Kane
-    message: "Anyway. Someone decided he should not finish that book.\r\nSo now he\u2019s
-      on the floor in there, and we get to clean up the story."
+    message: "I was planning to retire soon. So let\u2019s call this my last investigation,
+      and your first real lesson."
   - speakerName: Kane
-    message: "Listen. I\u2019m too old for this, and I was really planning to retire
-      quietly.\r\nBut since you\u2019re here... I might as well do one proper lesson
-      before I disappear.\r\nYou learn, I finally get to rest. Fair trade, right?"
-  - speakerName: Kane
-    message: "You\u2019ve got your AR toys. That\u2019s nice.\r\nBut tools don\u2019t
-      solve cases. People do.\r\nI\u2019ll show you how to use them so they don\u2019t
-      destroy someone\u2019s life by mistake."
+    message: "You\u2019ve got your toys, but tools don\u2019t solve cases, people
+      do. I\u2019ll show you how to use them so you don\u2019t ruin someone\u2019s
+      life by mistake."
   tapAnywhereToAdvance: 1
   minimumAdvanceInterval: 0.15
   nextSceneName: CrimeScene
@@ -926,7 +912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 433}
+  m_AnchoredPosition: {x: 0, y: 439.83}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893386491
@@ -949,9 +935,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Listen. I\u2019m too old for this, and I was really planning to retire
-    quietly.\r\nBut since you\u2019re here... I might as well do one proper lesson
-    before I disappear.\r\nYou learn, I finally get to rest. Fair trade, right?"
+  m_text: "Victim: male, late 60s, former prosecutor, name\u2019s Kim Jae\u2011min.
+    He was about to retire and was writing a book about an old case no one cares."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffed048451191614b9d4112ea0914815, type: 2}
   m_sharedMaterial: {fileID: -4408715858041696421, guid: ffed048451191614b9d4112ea0914815, type: 2}
@@ -978,8 +963,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 52
+  m_fontSizeBase: 52
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

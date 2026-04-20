@@ -20,6 +20,9 @@ public class SuspectProfileUI : MonoBehaviour
     [Header("Popup")]
     [SerializeField] private GameObject popupRoot;
     [SerializeField] private bool hideOnStart = true;
+    [SerializeField] private List<GameObject> uiToHideWhileOpen = new List<GameObject>();
+    [SerializeField] private GameObject previousButtonObject;
+    [SerializeField] private GameObject nextButtonObject;
 
     [Header("Content")]
     [SerializeField] private TMP_Text suspectNameText;
@@ -48,7 +51,7 @@ public class SuspectProfileUI : MonoBehaviour
     {
         if (suspectProfiles.Count > 0)
         {
-            ShowSuspect(currentIndex);
+            ShowSuspect(0);
         }
 
         SetPopupVisible(true);
@@ -56,6 +59,11 @@ public class SuspectProfileUI : MonoBehaviour
 
     public void Close()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUiClick();
+        }
+
         SetPopupVisible(false);
     }
 
@@ -66,8 +74,17 @@ public class SuspectProfileUI : MonoBehaviour
             return;
         }
 
-        currentIndex = (currentIndex + 1) % suspectProfiles.Count;
-        ShowSuspect(currentIndex);
+        if (currentIndex >= suspectProfiles.Count - 1)
+        {
+            return;
+        }
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUiClick();
+        }
+
+        ShowSuspect(currentIndex + 1);
     }
 
     public void ShowPrevious()
@@ -77,8 +94,17 @@ public class SuspectProfileUI : MonoBehaviour
             return;
         }
 
-        currentIndex = (currentIndex - 1 + suspectProfiles.Count) % suspectProfiles.Count;
-        ShowSuspect(currentIndex);
+        if (currentIndex <= 0)
+        {
+            return;
+        }
+
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUiClick();
+        }
+
+        ShowSuspect(currentIndex - 1);
     }
 
     public void ShowSuspect(int index)
@@ -106,11 +132,34 @@ public class SuspectProfileUI : MonoBehaviour
             portraitImage.sprite = profile.portrait;
             portraitImage.enabled = profile.portrait != null;
         }
+
+        RefreshNavigationButtons();
     }
 
     private void SetPopupVisible(bool shouldShow)
     {
         GameObject target = popupRoot != null ? popupRoot : gameObject;
         target.SetActive(shouldShow);
+
+        foreach (GameObject uiObject in uiToHideWhileOpen)
+        {
+            if (uiObject != null)
+            {
+                uiObject.SetActive(!shouldShow);
+            }
+        }
+    }
+
+    private void RefreshNavigationButtons()
+    {
+        if (previousButtonObject != null)
+        {
+            previousButtonObject.SetActive(currentIndex > 0);
+        }
+
+        if (nextButtonObject != null)
+        {
+            nextButtonObject.SetActive(currentIndex < suspectProfiles.Count - 1);
+        }
     }
 }

@@ -67,6 +67,11 @@ public class StoryDialogueController : MonoBehaviour
 
         lastAdvanceTime = Time.unscaledTime;
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUiClick();
+        }
+
         if (dialogueLines.Count == 0)
         {
             CompleteDialogue();

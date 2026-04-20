@@ -15,16 +15,19 @@ public class PopupVisibilityController : MonoBehaviour
 
     public void Open()
     {
+        PlayClickSound();
         SetVisible(true);
     }
 
     public void Close()
     {
+        PlayClickSound();
         SetVisible(false);
     }
 
     public void Toggle()
     {
+        PlayClickSound();
         GameObject popup = target != null ? target : gameObject;
         popup.SetActive(!popup.activeSelf);
     }
@@ -33,5 +36,13 @@ public class PopupVisibilityController : MonoBehaviour
     {
         GameObject popup = target != null ? target : gameObject;
         popup.SetActive(shouldShow);
+    }
+
+    private static void PlayClickSound()
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayUiClick();
+        }
     }
 }

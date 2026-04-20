@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/AR Project/Scenes/SuspectSelectScene.unity
     guid: ba2d773b64e12db4d8059b43f82ca3bd
+  - enabled: 1
+    path: Assets/AR Project/Scenes/EndingScene.unity
+    guid: f84d25723d1839d40a0098f56c4152ce
   m_configObjects:
     AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: 634ac8a25d8ed414e9fb4d37700ad908, type: 2}
     AR Foundation RemoteARFoundationRemoteSessionRecordsData: {fileID: 11400000, guid: bc9fa56343e436148a52bf210ca66c9b, type: 2}
