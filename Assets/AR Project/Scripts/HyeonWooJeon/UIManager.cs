@@ -1,30 +1,51 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI; // Image 사용을 위해 추가
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    [Header("Pop-up UI link")]
-    public GameObject hintPopupPanel;
-    public TextMeshProUGUI hintText;
+    [Header("Detective UI")]
+    public GameObject detectivePanel; // 선임 형사 UI 패널
+    public TextMeshProUGUI detectiveText;
 
-    [Header("Tool UI link")]
-    public GameObject toolPanel; // 껐다 켤 도구 상자
+    [Header("Tool UI")]
+    public GameObject toolPanel;
+
+    [Header("Ending UI")]
+    public GameObject endingPanel;
+    public Image endingImage;
+    public Sprite trueEndingSprite;
+    public Sprite badEndingSprite;
 
     void Awake()
     {
         Instance = this;
     }
 
-    // 인벤토리/가방
     public void ToggleToolPanel()
     {
-        // 패널 ON/OFF
-        bool isPanelActive = toolPanel.activeSelf;
-        toolPanel.SetActive(!isPanelActive);
+        toolPanel.SetActive(!toolPanel.activeSelf);
     }
 
-    public void ShowHintPopup(string message) { /**/ }
-    public void CloseHintPopup() { /**/ }
+    // 1. 선임 형사 대사 띄우기
+    public void ShowDetectiveDialogue(string message)
+    {
+        detectiveText.text = message;
+        detectivePanel.SetActive(true);
+    }
+
+    // 터치하면 UI가 사라지도록 (투명 버튼 등에 연결)
+    public void CloseDetectiveDialogue()
+    {
+        detectivePanel.SetActive(false);
+    }
+
+    // 2. 엔딩 이미지 띄우기
+    public void ShowEndingImage(bool isVictory)
+    {
+        endingPanel.SetActive(true);
+        endingImage.sprite = isVictory ? trueEndingSprite : badEndingSprite;
+    }
 }
