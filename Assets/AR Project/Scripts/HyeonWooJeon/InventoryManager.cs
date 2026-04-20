@@ -33,9 +33,18 @@ public class InventoryManager : MonoBehaviour
     // show the description when clicking the evidence button
     public void ShowDescription(EvidenceData data)
     {
+        Debug.Log($"📺 매니저 수신 완료! 도화지 글씨를 [{data.evidenceName}] 데이터로 덮어씁니다!");
+
+        if (data == null) { Debug.LogError("❌ 에러: 데이터가 없음!"); return; }
+        if (descriptionPanel == null) { Debug.LogError("❌ 에러: 패널 연결 안 됨!"); return; }
+        if (nameText == null) { Debug.LogError("❌ 에러: NameText 연결 안 됨!"); return; }
+        if (descText == null) { Debug.LogError("❌ 에러: DescText 연결 안 됨!"); return; }
+
         descriptionPanel.SetActive(true);
         nameText.text = data.evidenceName;
         descText.text = data.description;
+
+        Debug.Log($"✅ 글씨 변경 명령 성공! 지금 도화지에 적힌 글씨는: [{descText.text}] 입니다.");
     }
 
   // open/close inventory
