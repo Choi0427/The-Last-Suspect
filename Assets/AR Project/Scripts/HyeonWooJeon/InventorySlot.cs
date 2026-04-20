@@ -5,39 +5,38 @@ using TMPro;
 public class InventorySlot : MonoBehaviour
 {
     [Header("슬롯 설정")]
-    public EvidenceData expectedData; // 💡 이 슬롯의 '지정석' 주인 (인스펙터에서 설정)
+    public EvidenceData expectedData; 
 
     [Header("UI 연결")]
     public Image iconImage;
-    public TextMeshProUGUI unknownText; // 💡 "???" 글씨를 띄울 텍스트
+    public TextMeshProUGUI unknownText; 
 
-    private bool isCollected = false; // 현재 찾았는지 여부
+    private bool isCollected = false; 
 
     void Start()
     {
-        // 1. 게임 시작 시: 아이콘은 숨기고, "???" 텍스트는 켜고, 버튼은 잠급니다.
+        // hide icon at first, show in ???
         iconImage.enabled = false;
         if (unknownText != null) unknownText.gameObject.SetActive(true);
         GetComponent<Button>().interactable = false;
     }
 
-    // 2. 매니저가 "증거물 찾았어!" 하고 방송할 때 실행되는 함수
+    // manager announcing about discovered evidence
     public void UnlockSlot(EvidenceData collectedData)
     {
-        // 들어온 증거물이 내 지정석 주인이 맞다면?!
         if (expectedData == collectedData)
         {
             isCollected = true;
-            iconImage.sprite = expectedData.icon; // 진짜 이미지로 교체
-            iconImage.enabled = true; // 아이콘 켜기
+            iconImage.sprite = expectedData.icon; 
+            iconImage.enabled = true; 
 
-            if (unknownText != null) unknownText.gameObject.SetActive(false); // "???" 글씨 끄기
+            if (unknownText != null) unknownText.gameObject.SetActive(false); // disactive ??? text
 
-            GetComponent<Button>().interactable = true; // 이제 클릭 가능!
+            GetComponent<Button>().interactable = true; //clickable now
         }
     }
 
-    // 3. 슬롯(버튼)을 클릭했을 때 설명창 띄우기
+    // show description when clicked
     public void OnSlotClick()
     {
         if (isCollected && expectedData != null)

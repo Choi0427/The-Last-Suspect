@@ -1,30 +1,29 @@
 using UnityEngine;
-using UnityEngine.EventSystems; // UI 터치 방지용
+using UnityEngine.EventSystems; 
 
 public class ARInteractionHandler : MonoBehaviour
 {
     [Header("setting")]
-    public float maxDistance = 5.0f; // 상호작용 가능한 최대 거리 (5미터)
-    public LayerMask evidenceLayer; // 증거물만 선택적으로 감지하기 위한 레이어
+    public float maxDistance = 5.0f; 
+    public LayerMask evidenceLayer; 
 
     void Update()
     {
-        // 1. 터치 발생 확인 (모바일: TouchCount, 에디터 테스트: MouseButtonDown)
+        // touch check
         if (GetInputDown())
         {
-            // 2. UI(버튼 등)를 클릭 중이라면 월드 상호작용 무시
+            // ignore interactions when UI is clicked
             if (IsPointerOverUI()) return;
 
-            // 3. 터치 위치로부터 레이 생성
+            // create ray
             Ray ray = Camera.main.ScreenPointToRay(GetInputPosition());
             RaycastHit hit;
 
-            // 4. 레이 발사 (모든 물체가 아니라 'evidenceLayer'로 설정된 물체만 검사 가능)
+            // shoot ray
             if (Physics.Raycast(ray, out hit, maxDistance, evidenceLayer))
             {
                 Debug.Log($"collider: {hit.collider.name}");
 
-                // 5. 충돌한 오브젝트에서 EvidenceObject 스크립트 찾기
                 EvidenceObject evidence = hit.collider.GetComponent<EvidenceObject>();
                 if (evidence != null)
                 {
@@ -34,7 +33,7 @@ public class ARInteractionHandler : MonoBehaviour
         }
     }
 
-    // 모바일 터치와 마우스 클릭을 모두 지원하는 헬퍼 함수
+    // both mobile touch/mouse click
     private bool GetInputDown()
     {
         return Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began);
@@ -46,7 +45,7 @@ public class ARInteractionHandler : MonoBehaviour
         return Input.mousePosition;
     }
 
-    // UI 뒤의 물체가 클릭되는 것을 방지
+    // prevent touching objects behine the UI
     private bool IsPointerOverUI()
     {
         if (EventSystem.current == null) return false;

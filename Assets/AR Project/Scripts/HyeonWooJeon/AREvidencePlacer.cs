@@ -6,7 +6,7 @@ using UnityEngine.XR.ARSubsystems;
 public class AREvidencePlacer : MonoBehaviour
 {
     public ARRaycastManager raycastManager;
-    public GameObject evidencePrefab; // 배치할 증거물 프리팹
+    public GameObject evidencePrefab; // evidence prefabs to place
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     void Update()

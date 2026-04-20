@@ -1,13 +1,13 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI; // Image 사용을 위해 추가
+using UnityEngine.UI; 
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
     [Header("Detective UI")]
-    public GameObject detectivePanel; // 선임 형사 UI 패널
+    public GameObject detectivePanel; // UI panel
     public TextMeshProUGUI detectiveText;
 
     [Header("Tool UI")]
@@ -29,20 +29,20 @@ public class UIManager : MonoBehaviour
         toolPanel.SetActive(!toolPanel.activeSelf);
     }
 
-    // 1. 선임 형사 대사 띄우기
+    // show dialogue
     public void ShowDetectiveDialogue(string message)
     {
         detectiveText.text = message;
         detectivePanel.SetActive(true);
     }
 
-    // 터치하면 UI가 사라지도록 (투명 버튼 등에 연결)
+    // UI disappearing when touched
     public void CloseDetectiveDialogue()
     {
         detectivePanel.SetActive(false);
     }
 
-    // 2. 엔딩 이미지 띄우기
+    // ending screen
     public void ShowEndingImage(bool isVictory)
     {
         endingPanel.SetActive(true);

@@ -19,11 +19,9 @@ public class InventoryManager : MonoBehaviour
         Instance = this;
     }
 
-    // 💡 증거물을 획득했을 때 (이제 순서 상관없이 방송합니다!)
     public void AddEvidence(EvidenceData data)
     {
-        // 모든 슬롯을 한 번씩 훑어보면서 잠금 해제 명령을 내립니다.
-        // (자기 짝꿍이 아닌 슬롯은 무시하고, 짝꿍인 슬롯만 열리게 됩니다)
+        // unlock command of discovered evidence
         foreach (InventorySlot slot in slots)
         {
             slot.UnlockSlot(data);
@@ -32,7 +30,7 @@ public class InventoryManager : MonoBehaviour
         Debug.Log($"🎒 수첩에 기록됨: {data.evidenceName}");
     }
 
-    // 💡 슬롯을 터치하면 설명창 띄우기 (동일함)
+    // show the description when clicking the evidence button
     public void ShowDescription(EvidenceData data)
     {
         descriptionPanel.SetActive(true);
@@ -40,7 +38,7 @@ public class InventoryManager : MonoBehaviour
         descText.text = data.description;
     }
 
-    // 💡 수첩 열기/닫기 (동일함)
+  // open/close inventory
     public void ToggleInventory()
     {
         bool isOpening = !inventoryPanel.activeSelf;

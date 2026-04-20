@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
-using UnityEngine.InputSystem; // 🔥 유니티 최신 입력 시스템 장착!
+using UnityEngine.InputSystem; 
 
 public class CameraTouchManager : MonoBehaviour
 {
@@ -18,8 +18,7 @@ public class CameraTouchManager : MonoBehaviour
         bool isInputDetected = false;
         Vector2 inputPosition = Vector2.zero;
 
-        // 🚀 구버전(Input.touch)을 버리고, 최신버전(Pointer)으로 완벽 통합!
-        // PC 마우스 좌클릭이든, 핸드폰 손가락 터치든 가리지 않고 정확히 잡아냅니다.
+        //click in computer and touching in mobile both works
         if (Pointer.current != null && Pointer.current.press.wasPressedThisFrame)
         {
             inputPosition = Pointer.current.position.ReadValue();
@@ -27,7 +26,7 @@ public class CameraTouchManager : MonoBehaviour
             logText = $"📱 터치/클릭 감지됨! 좌표: {inputPosition}";
         }
 
-        // 터치가 감지되었을 때 수사 시작
+        // investigation starting when touch detected
         if (isInputDetected)
         {
             if (IsPointerOverUI(inputPosition))
@@ -38,7 +37,6 @@ public class CameraTouchManager : MonoBehaviour
 
             Ray ray = arCamera.ScreenPointToRay(inputPosition);
 
-            // 모바일 삑사리 방지용 두꺼운 관통 레이저 발사!
             RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, 50f);
 
             if (hits.Length > 0)
