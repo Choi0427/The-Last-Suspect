@@ -21,6 +21,7 @@ public class CrimeToolButtonEntry
     public Image highlightImage;
 }
 
+// Tracks the currently selected investigation tool and refreshes the HUD highlight state.
 public class CrimeSceneHudController : MonoBehaviour
 {
     [Header("Tool Buttons")]
@@ -40,6 +41,7 @@ public class CrimeSceneHudController : MonoBehaviour
 
     public void SelectToolByInt(int toolIndex)
     {
+        // Int-based routing keeps Unity button events simple in the inspector.
         if (!Enum.IsDefined(typeof(CrimeToolType), toolIndex))
         {
             return;

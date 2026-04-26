@@ -15,6 +15,7 @@ public class SuspectProfileEntry
     public Sprite portrait;
 }
 
+// Controls the suspect profile popup and keeps the displayed profile in sync with the current page.
 public class SuspectProfileUI : MonoBehaviour
 {
     [Header("Popup")]
@@ -138,6 +139,7 @@ public class SuspectProfileUI : MonoBehaviour
 
     private void SetPopupVisible(bool shouldShow)
     {
+        // While the profile is open, overlapping HUD elements are hidden to keep focus on the popup.
         GameObject target = popupRoot != null ? popupRoot : gameObject;
         target.SetActive(shouldShow);
 

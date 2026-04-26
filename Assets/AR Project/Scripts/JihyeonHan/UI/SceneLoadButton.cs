@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Reusable button handler that optionally plays UI audio before loading a target scene.
 public class SceneLoadButton : MonoBehaviour
 {
     [SerializeField] private string targetSceneName;
@@ -31,6 +32,7 @@ public class SceneLoadButton : MonoBehaviour
 
         if (loadDelaySeconds > 0f)
         {
+            // A short delay lets the click sound start before the current scene is unloaded.
             yield return new WaitForSeconds(loadDelaySeconds);
         }
 

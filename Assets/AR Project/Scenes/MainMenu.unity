@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneBgmPlayer
   bgmCue: 0
-  restartIfSame: 0
 --- !u!4 &632509271
 Transform:
   m_ObjectHideFlags: 0

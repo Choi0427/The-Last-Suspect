@@ -16,6 +16,7 @@ public class EvidenceInventoryEntry
     public Sprite detailImage;
 }
 
+// Presents collected evidence inside a popup and swaps the visible entry on demand.
 public class EvidenceInventoryUI : MonoBehaviour
 {
     [Header("Popup")]
@@ -98,6 +99,7 @@ public class EvidenceInventoryUI : MonoBehaviour
 
         if (detailImage != null)
         {
+            // Prefer the dedicated close-up image, but fall back to the thumbnail when needed.
             detailImage.sprite = entry.detailImage != null ? entry.detailImage : entry.thumbnail;
             detailImage.enabled = detailImage.sprite != null;
         }
@@ -124,6 +126,7 @@ public class EvidenceInventoryUI : MonoBehaviour
 
     private void SetPopupVisible(bool shouldShow)
     {
+        // This mirrors the suspect popup behavior so only one major overlay owns the screen at a time.
         GameObject target = popupRoot != null ? popupRoot : gameObject;
         target.SetActive(shouldShow);
 
