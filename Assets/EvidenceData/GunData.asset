@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GunData
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
   evidenceName: Used Gun
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 64a88ee0887b96342bd8ee1faae7372d, type: 3}
   description: Descriptions about Gun evidence

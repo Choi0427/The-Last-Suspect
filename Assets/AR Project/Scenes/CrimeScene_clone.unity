@@ -999,8 +999,8 @@ RectTransform:
   - {fileID: 895635646}
   - {fileID: 1501961306}
   - {fileID: 368757468}
-  - {fileID: 1841963703}
   - {fileID: 1611482918}
+  - {fileID: 1841963703}
   m_Father: {fileID: 982877119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1758,8 +1758,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Torn label from Adam\u2019s print shop box near the desk. Timestamp: delivered
-    the day before, opened from inside."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffed048451191614b9d4112ea0914815, type: 2}
   m_sharedMaterial: {fileID: -4408715858041696421, guid: ffed048451191614b9d4112ea0914815, type: 2}
@@ -3406,9 +3405,10 @@ MonoBehaviour:
   - {fileID: 192188505}
   - {fileID: 672998450}
   - {fileID: 1204727086}
-  descriptionPanel: {fileID: 151067445}
-  nameText: {fileID: 0}
-  descText: {fileID: 0}
+  descriptionPanel: {fileID: 0}
+  nameText: {fileID: 1501961307}
+  descText: {fileID: 368757469}
+  detailImage: {fileID: 1841963704}
 --- !u!4 &883003930
 Transform:
   m_ObjectHideFlags: 0
@@ -4450,9 +4450,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1825952103}
-        m_TargetAssemblyTypeName: EvidenceInventoryUI, Assembly-CSharp
-        m_MethodName: Open
+      - m_Target: {fileID: 883003929}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ToggleInventory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5061,7 +5061,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Blood Direction Pattern
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af50e3d3fc96c6f4d99e3d70704746cd, type: 2}
   m_sharedMaterial: {fileID: -4289729215759819593, guid: af50e3d3fc96c6f4d99e3d70704746cd, type: 2}
