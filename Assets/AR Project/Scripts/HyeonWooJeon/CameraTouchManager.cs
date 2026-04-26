@@ -37,7 +37,7 @@ public class CameraTouchManager : MonoBehaviour
 
             Ray ray = arCamera.ScreenPointToRay(inputPosition);
 
-            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, 50f);
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, 1000f);
 
             if (hits.Length > 0)
             {

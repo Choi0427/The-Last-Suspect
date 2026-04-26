@@ -736,7 +736,7 @@ MonoBehaviour:
       life by mistake."
   tapAnywhereToAdvance: 1
   minimumAdvanceInterval: 0.15
-  nextSceneName: CrimeScene
+  nextSceneName: CrimeScene_clone
   loadNextSceneOnComplete: 1
 --- !u!4 &1040711641
 Transform:

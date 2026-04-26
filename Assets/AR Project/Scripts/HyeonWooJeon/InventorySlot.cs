@@ -39,7 +39,7 @@ public class InventorySlot : MonoBehaviour
     // show description when clicked
     public void OnSlotClick()
     {
-        // 1. 버튼이 눌렸는지 자체를 확인
+        // check the buttons clicked
         Debug.Log($"👆 버튼 클릭 감지됨! (이 슬롯의 지정석: {expectedData.evidenceName})");
 
         if (isCollected && expectedData != null)

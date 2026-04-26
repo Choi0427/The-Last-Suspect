@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class SuspectObject : MonoBehaviour
+// THIS SCRIPT WILL BE LEFT UNUSED. PLEASE IGNORE THIS SCRIPT BELOW INCLUDING COMMENTS
+    public class SuspectObject : MonoBehaviour
 {
     [Header("suspect setting")]
     public string suspectName;

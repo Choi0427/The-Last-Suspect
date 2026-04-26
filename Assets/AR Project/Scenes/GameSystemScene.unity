@@ -1129,6 +1129,8 @@ MonoBehaviour:
   - {fileID: 716731471}
   - {fileID: 1033477963}
   - {fileID: 1202628999}
+  - {fileID: 1202628999}
+  - {fileID: 1202628999}
   descriptionPanel: {fileID: 1880142576}
   nameText: {fileID: 1154875066}
   descText: {fileID: 1584280436}
@@ -5585,8 +5587,8 @@ MonoBehaviour:
   - {fileID: 1033477963}
   - {fileID: 1202628999}
   descriptionPanel: {fileID: 1880142576}
-  nameText: {fileID: 0}
-  descText: {fileID: 0}
+  nameText: {fileID: 1154875066}
+  descText: {fileID: 1584280436}
 --- !u!1 &875343105
 GameObject:
   m_ObjectHideFlags: 0
@@ -7946,7 +7948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -140, y: 393}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1154875065
@@ -10704,7 +10706,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 0}
+  m_AnchoredPosition: {x: -197, y: 49}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1629812244
