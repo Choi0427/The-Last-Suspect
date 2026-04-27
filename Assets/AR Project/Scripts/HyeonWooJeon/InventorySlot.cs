@@ -4,10 +4,8 @@ using TMPro;
 
 public class InventorySlot : MonoBehaviour
 {
-    // [Header("슬롯 설정")]
     public EvidenceData expectedData; 
 
-    // [Header("UI 연결")]
     public Image iconImage;
     public TextMeshProUGUI unknownText; 
 
