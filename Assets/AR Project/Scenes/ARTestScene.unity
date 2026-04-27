@@ -652,7 +652,6 @@ GameObject:
   - component: {fileID: 2119871606}
   - component: {fileID: 2119871607}
   - component: {fileID: 2119871608}
-  - component: {fileID: 2119871609}
   m_Layer: 0
   m_Name: XR Origin (Mobile AR)
   m_TagString: Untagged
@@ -756,13 +755,13 @@ MonoBehaviour:
   _anchorManager: {fileID: 2119871608}
   _arCamera: {fileID: 1549383404}
   evidencePrefabs:
-  - {fileID: 6689992741278781415, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
-  - {fileID: 7733875955768408218, guid: 2e16046ebcbcb6742a86569d82e56cce, type: 3}
-  - {fileID: 4257412417454173071, guid: d5615d616019430d9c2e8727e71c97fb, type: 3}
-  - {fileID: 4922582553321831162, guid: 76f3439a0ae796e4b81bee3f91f888ee, type: 3}
-  - {fileID: 919132149155446097, guid: f396e3429a4864fc2ad497cb3ce5fe2c, type: 3}
-  - {fileID: 919132149155446097, guid: f396e3429a4864fc2ad497cb3ce5fe2c, type: 3}
-  - {fileID: 919132149155446097, guid: f396e3429a4864fc2ad497cb3ce5fe2c, type: 3}
+  - {fileID: 919132149155446097, guid: ef8d5791bb9ada14e94b09d6e3f1d1ca, type: 3}
+  - {fileID: 919132149155446097, guid: f8587dba20e7f36459d129cdba4c2cf2, type: 3}
+  - {fileID: 919132149155446097, guid: a57f441f2833813428b9991dd9cc5ea4, type: 3}
+  - {fileID: 3395375943024890070, guid: 55ef03967a52a044684309ed0f78845b, type: 3}
+  - {fileID: 720086413642020241, guid: d177d225fbe75ea4196561efe8c7b192, type: 3}
+  - {fileID: 3956386965902930265, guid: efb5a117e384d954699705360eb9cdea, type: 3}
+  - {fileID: 3748593429252069807, guid: 53831f71f873ef6429e5ceffac59d69d, type: 3}
   _minSpawnDistance: 1.75
   _minSpawnAngle: 40
   _minPlaneArea: 0.15
@@ -802,24 +801,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AnchorPrefab: {fileID: 0}
---- !u!114 &2119871609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119871600}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d028d57a5687b9d4e857f6a19f54f196, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EvidencePlacementManage
-  _raycastManager: {fileID: 2119871601}
-  _planeManager: {fileID: 2119871602}
-  evidencePrefabs:
-  - {fileID: 6689992741278781415, guid: 3549fdaf258e11846b85a316c16c699c, type: 3}
-  - {fileID: 5811970893536397571, guid: 13241d599ff10413498d04c6d683ca10, type: 3}
-  - {fileID: 2668992677333385299, guid: 98cdacc32bf0d8d469092762a7263c4b, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
