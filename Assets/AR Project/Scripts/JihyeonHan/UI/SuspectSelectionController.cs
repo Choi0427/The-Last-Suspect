@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Handles suspect picking, confirmation, and handoff into the ending scene.
 public class SuspectSelectionController : MonoBehaviour
 {
     [Header("Popup")]
@@ -33,6 +34,7 @@ public class SuspectSelectionController : MonoBehaviour
 
     public void SelectCandidate(SuspectCandidate candidate)
     {
+        // A selection becomes final only after the confirmation popup is accepted.
         pendingCandidate = candidate;
 
         if (confirmMessageText != null)
@@ -53,6 +55,7 @@ public class SuspectSelectionController : MonoBehaviour
 
     public void ConfirmSelection()
     {
+        // Persist the chosen suspect so the ending scene can resolve the correct outcome.
         CaseOutcomeState.SelectedCandidate = pendingCandidate;
 
         if (AudioManager.Instance != null)
