@@ -23,10 +23,9 @@ public class ToolManager : MonoBehaviour
         }
     }
 
+    // tool pressed
     public void SelectTool(int toolIndex)
     {
-        // Debug.Log("🔔 장갑 버튼 눌림! 전달받은 도구 번호: " + toolIndex);
-
         currentSelectedTool = (ToolType)toolIndex;
     }
 }
