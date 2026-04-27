@@ -47,7 +47,6 @@ public class InventoryManager : MonoBehaviour
         if (detailImage != null && data.icon != null)
         {
             detailImage.sprite = data.icon;
-            // ⭐ 트릭: 사진이 들어오면 투명도를 100%(불투명)로 만들어서 짠! 하고 보여줍니다.
             detailImage.color = new Color(1, 1, 1, 1f);
             detailImage.gameObject.SetActive(true);
         }
@@ -74,8 +73,8 @@ public class InventoryManager : MonoBehaviour
 
         if (detailImage != null)
         {
-            detailImage.sprite = null; // 기존 사진 비우기
-            // 인벤토리를 처음 열 때는 투명도를 0%로 만들어서 하얀 네모를 완전히 숨깁니다.
+            detailImage.sprite = null; 
+            // Transparancy 0% at first
             detailImage.color = new Color(1, 1, 1, 0f);
             detailImage.gameObject.SetActive(false);
         }
