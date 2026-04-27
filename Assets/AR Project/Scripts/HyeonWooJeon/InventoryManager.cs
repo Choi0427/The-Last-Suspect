@@ -34,8 +34,10 @@ public class InventoryManager : MonoBehaviour
     // when player collected the evidence
     public void AddEvidence(EvidenceData data)
     {
+        Debug.Log($"[AddEvidence] 수집된 데이터: {data.name} (ID: {data.GetInstanceID()})");
         foreach (InventorySlot slot in slots)
         {
+            Debug.Log($"  슬롯 expectedData: {slot.expectedData?.name} (ID: {slot.expectedData?.GetInstanceID()})");
             slot.UnlockSlot(data);
         }
         Debug.Log($"🎒 수첩에 기록됨: {data.evidenceName}");
