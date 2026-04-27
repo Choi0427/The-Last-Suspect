@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FingerPrintData
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
   evidenceName: FIngerprint
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 6e57110f2b6039344b46669a00272c55, type: 3}
   description: Descriptions about fingerprint evidence

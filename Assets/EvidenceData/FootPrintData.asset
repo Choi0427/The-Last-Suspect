@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FootPrintData
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
   evidenceName: Footprint
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 85df1657d41174a4a8376432f9a31bdb, type: 3}
   description: Descriptions about footprint evidence
