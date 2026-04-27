@@ -45,12 +45,12 @@ public class GameManager : MonoBehaviour
     public void AddEvidence()
     {
         collectedEvidenceCount++;
-        Debug.Log($"현재 수집한 증거: {collectedEvidenceCount} / {totalEvidenceCount}");
+        // Debug.Log($"현재 수집한 증거: {collectedEvidenceCount} / {totalEvidenceCount}");
 
         // switch to accusation scene
         if (collectedEvidenceCount >= totalEvidenceCount)
         {
-            Debug.Log("모든 증거를 수집했습니다! 지목 씬으로 이동합니다.");
+            // Debug.Log("모든 증거를 수집했습니다! 지목 씬으로 이동합니다.");
             // switch scene 2 secs later(complete message)
             Invoke("GoToAccusationScene", 2.0f);
         }
@@ -89,11 +89,11 @@ public class GameManager : MonoBehaviour
         currentState = GameState.GameOver;
         if (isVictory)
         {
-            Debug.Log("수사 성공: 진범을 잡았습니다!");
+            // Debug.Log("수사 성공: 진범을 잡았습니다!");
         }
         else
         {
-            Debug.Log("수사 실패: 엉뚱한 사람을 지목했습니다...");
+            // Debug.Log("수사 실패: 엉뚱한 사람을 지목했습니다...");
         }
 
         // 결과 UI 띄우기 (UIManager가 씬에 존재해야 함)

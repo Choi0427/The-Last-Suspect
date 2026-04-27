@@ -4,10 +4,10 @@ using TMPro;
 
 public class InventorySlot : MonoBehaviour
 {
-    [Header("슬롯 설정")]
+    // [Header("슬롯 설정")]
     public EvidenceData expectedData; 
 
-    [Header("UI 연결")]
+    // [Header("UI 연결")]
     public Image iconImage;
     public TextMeshProUGUI unknownText; 
 
@@ -40,16 +40,16 @@ public class InventorySlot : MonoBehaviour
     public void OnSlotClick()
     {
         // check the buttons clicked
-        Debug.Log($"👆 버튼 클릭 감지됨! (이 슬롯의 지정석: {expectedData.evidenceName})");
+        // Debug.Log($"👆 버튼 클릭 감지됨! (이 슬롯의 지정석: {expectedData.evidenceName})");
 
         if (isCollected && expectedData != null)
         {
-            Debug.Log($"👉 짝꿍 데이터 확인 완료! 매니저에게 [{expectedData.evidenceName}] 설명을 요청합니다!");
+            // Debug.Log($"👉 짝꿍 데이터 확인 완료! 매니저에게 [{expectedData.evidenceName}] 설명을 요청합니다!");
             InventoryManager.Instance.ShowDescription(expectedData);
         }
         else
         {
-            Debug.Log($"🚫 거절됨: 아직 수집하지 않은 증거물(isCollected: {isCollected})이거나 데이터가 없습니다!");
+            // Debug.Log($"🚫 거절됨: 아직 수집하지 않은 증거물(isCollected: {isCollected})이거나 데이터가 없습니다!");
         }
     }
 }
