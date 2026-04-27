@@ -4,6 +4,7 @@ using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
+// Places the suspect lineup in front of the tracked AR camera and tries to recover tracking after scene changes.
 public class SuspectSelectionStageLayout : MonoBehaviour
 {
     [Header("Camera Anchor")]
@@ -42,6 +43,7 @@ public class SuspectSelectionStageLayout : MonoBehaviour
             yield return null;
         }
 
+        // Scene-to-scene AR transitions are the fragile part, so we gather the AR stack before placement begins.
         ResolveArComponents(anchor);
 
         if (restartArStackOnStart)
@@ -72,27 +74,27 @@ public class SuspectSelectionStageLayout : MonoBehaviour
     {
         if (arSession == null)
         {
-            arSession = FindObjectOfType<ARSession>();
+            arSession = Object.FindAnyObjectByType<ARSession>();
         }
 
         if (arInputManager == null)
         {
-            arInputManager = FindObjectOfType<ARInputManager>();
+            arInputManager = Object.FindAnyObjectByType<ARInputManager>();
         }
 
         if (inputActionManager == null)
         {
-            inputActionManager = FindObjectOfType<InputActionManager>();
+            inputActionManager = Object.FindAnyObjectByType<InputActionManager>();
         }
 
         if (arPlaneManager == null)
         {
-            arPlaneManager = FindObjectOfType<ARPlaneManager>();
+            arPlaneManager = Object.FindAnyObjectByType<ARPlaneManager>();
         }
 
         if (arRaycastManager == null)
         {
-            arRaycastManager = FindObjectOfType<ARRaycastManager>();
+            arRaycastManager = Object.FindAnyObjectByType<ARRaycastManager>();
         }
 
         if (anchor != null)
@@ -127,6 +129,7 @@ public class SuspectSelectionStageLayout : MonoBehaviour
 
     private IEnumerator RestartArStack()
     {
+        // Toggling the AR-related managers can help the camera pose recover after loading from another AR scene.
         SetArComponentsEnabled(false);
         yield return null;
 
@@ -141,6 +144,7 @@ public class SuspectSelectionStageLayout : MonoBehaviour
 
     private IEnumerator WaitForTracking()
     {
+        // Placement is delayed until tracking is live so the suspects stay in world space instead of screen space.
         float deadline = Time.unscaledTime + Mathf.Max(0.1f, trackingWaitSeconds);
         while (!IsTrackingReady() && Time.unscaledTime < deadline)
         {
@@ -230,6 +234,7 @@ public class SuspectSelectionStageLayout : MonoBehaviour
             return;
         }
 
+        // Ignore camera pitch so the lineup spreads around the player on the horizontal plane.
         Vector3 forward = anchor.forward;
         forward.y = 0f;
         forward = forward.sqrMagnitude < 0.001f ? Vector3.forward : forward.normalized;
@@ -260,6 +265,7 @@ public class SuspectSelectionStageLayout : MonoBehaviour
             return;
         }
 
+        // Anchoring the root asks AR Foundation to keep the placed character stable in the world.
         characterRoot.gameObject.AddComponent<ARAnchor>();
     }
 }

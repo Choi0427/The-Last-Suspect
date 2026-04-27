@@ -14,6 +14,7 @@ public class StoryDialogueLine
     public string message;
 }
 
+// Advances a linear dialogue sequence and optionally hands off to the next scene when it ends.
 public class StoryDialogueController : MonoBehaviour
 {
     [Header("UI References")]
@@ -42,6 +43,7 @@ public class StoryDialogueController : MonoBehaviour
 
     private void Update()
     {
+        // The cooldown prevents a single tap from skipping multiple lines in one frame burst.
         if (!tapAnywhereToAdvance || completed)
         {
             return;
@@ -115,6 +117,7 @@ public class StoryDialogueController : MonoBehaviour
         completed = true;
         SetContinueIndicator(false);
 
+        // Scene flow is data-driven so the same controller can be reused in other cutscenes.
         if (loadNextSceneOnComplete && !string.IsNullOrWhiteSpace(nextSceneName))
         {
             SceneManager.LoadScene(nextSceneName);

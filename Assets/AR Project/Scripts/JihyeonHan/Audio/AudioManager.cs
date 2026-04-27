@@ -32,6 +32,7 @@ public class BgmCueClip
     public AudioClip clip;
 }
 
+// Global audio singleton that survives scene changes and serves both one-shot SFX and looping BGM.
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
@@ -90,7 +91,7 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip, sfxVolume);
     }
 
-    public void PlayBgm(BgmCue cue, bool restartIfSame = false)
+    public void PlayBgm(BgmCue cue)
     {
         if (bgmSource == null)
         {
@@ -103,8 +104,9 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        if (!restartIfSame && bgmSource.isPlaying && bgmSource.clip == clip)
+        if (bgmSource.isPlaying && bgmSource.clip == clip)
         {
+            // Avoid restarting the same loop when multiple scenes request the same BGM cue.
             return;
         }
 
@@ -176,6 +178,7 @@ public class AudioManager : MonoBehaviour
 
     private void RebuildLookups()
     {
+        // Inspector-friendly lists are converted into dictionaries once so runtime lookup stays simple.
         sfxLookup.Clear();
         bgmLookup.Clear();
 

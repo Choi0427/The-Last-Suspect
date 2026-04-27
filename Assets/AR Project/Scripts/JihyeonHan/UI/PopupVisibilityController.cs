@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Small helper for generic open/close/toggle popup buttons that should also play click audio.
 public class PopupVisibilityController : MonoBehaviour
 {
     [SerializeField] private GameObject target;

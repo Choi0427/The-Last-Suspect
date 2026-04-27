@@ -5689,7 +5689,7 @@ MonoBehaviour:
   - toolType: 5
     button: {fileID: 1190756631}
     highlightImage: {fileID: 118123694}
-  selectedColor: {r: 0.82, g: 0.2, b: 0.2, a: 1}
+  selectedColor: {r: 0.6745098, g: 0.36078432, b: 0.36078432, a: 1}
   unselectedColor: {r: 1, g: 1, b: 1, a: 1}
   hideHighlightWhenUnselected: 1
 --- !u!4 &1874815557

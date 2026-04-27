@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+// Converts a screen tap into a 3D raycast and forwards hits to the suspect selection controller.
 public class SuspectSelectionRaycaster : MonoBehaviour
 {
     [SerializeField] private Camera targetCamera;
@@ -27,6 +28,7 @@ public class SuspectSelectionRaycaster : MonoBehaviour
             return;
         }
 
+        // The collider can live on a child object, so the target component is searched up the hierarchy.
         SuspectSelectionTarget target = hit.collider.GetComponentInParent<SuspectSelectionTarget>();
         if (target == null || selectionController == null)
         {
