@@ -32,6 +32,10 @@ public class EvidencePlacementManager : MonoBehaviour
     [SerializeField] private bool _hideAllPlanesAfterEnoughSpawn = false;
     [SerializeField] private int _hideAllPlanesAfterPlacementCount = 1;
 
+    [Header("Evidence Metadata")]
+    [SerializeField] private ToolManager.ToolType[] requiredTools;
+    [SerializeField] private string[] evidenceNames;
+
     private class SpawnedEvidenceInfo
     {
         public TrackableId planeId;
