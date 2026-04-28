@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+// Main inventory manager class
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance;
@@ -13,14 +14,15 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] private List<GameObject> uiToHideWhileOpen = new List<GameObject>();
 
     [Header("UI 연결")]
+    // 인벤토리 창 전체를 묶어두는 가장 큰 부모 배경 패널
     public GameObject inventoryPanel;
+    // 인벤토리 내부에 배치된 각각의 증거물 버튼(슬롯)들을 담아두는 배열
     public InventorySlot[] slots;
 
-    [Header("설명창 연결")]
+    [Header("설명창 연결")] // shows informations of collected evidences
     public GameObject descriptionPanel;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descText;
-    public Image detailImage;
 
     void Awake()
     {
@@ -38,9 +40,11 @@ public class InventoryManager : MonoBehaviour
             inventoryPanel.SetActive(true);
         }
 
+
         ClearDescription();
     }
 
+    // when player collected the evidence
     public void AddEvidence(EvidenceData data)
     {
         if (data == null) return;
@@ -56,6 +60,7 @@ public class InventoryManager : MonoBehaviour
         Debug.Log($"🎒 수첩에 기록됨: {data.evidenceName}");
     }
 
+    // shows the informations of collected evidence
     public void ShowDescription(EvidenceData data)
     {
         if (data == null) return;
@@ -110,6 +115,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    // hiding the informations of evidences.
     public void ClearDescription()
     {
         if (descriptionPanel != null)
