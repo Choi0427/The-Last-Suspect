@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6251725823856127872
+--- !u!1 &2810487212502520935
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6232288170896900481}
-  - component: {fileID: 437192246502686693}
-  - component: {fileID: 2114394967477337319}
-  - component: {fileID: 4035950378343593038}
-  - component: {fileID: 8865880932949970750}
+  - component: {fileID: 478710029427545526}
+  - component: {fileID: 7461003645695439219}
+  - component: {fileID: 167768042541769340}
+  - component: {fileID: 7321761427448243024}
+  - component: {fileID: 8575571616995696365}
   m_Layer: 0
-  m_Name: BoxlabelPrefab 1
+  m_Name: BloodPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6232288170896900481
+--- !u!4 &478710029427545526
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6251725823856127872}
+  m_GameObject: {fileID: 2810487212502520935}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1797.7083, y: -0.000073525356, z: 133.01797}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &437192246502686693
+--- !u!33 &7461003645695439219
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6251725823856127872}
+  m_GameObject: {fileID: 2810487212502520935}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2114394967477337319
+--- !u!23 &167768042541769340
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6251725823856127872}
+  m_GameObject: {fileID: 2810487212502520935}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f5e38376fe10ce4aae990f27bb5e560, type: 2}
+  - {fileID: 2100000, guid: 7992e4362ddaf704da53e6d3986423ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,13 +92,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4035950378343593038
+--- !u!64 &7321761427448243024
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6251725823856127872}
+  m_GameObject: {fileID: 2810487212502520935}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -114,18 +114,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8865880932949970750
+--- !u!114 &8575571616995696365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6251725823856127872}
+  m_GameObject: {fileID: 2810487212502520935}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8685fbc456971ba48a6be35b53a4aab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceObject
-  myData: {fileID: 11400000, guid: fe5afef0d4ccc604fa6c5099252faec5, type: 2}
-  requiredTool: 3
+  myData: {fileID: 11400000, guid: ed0f0fa850b306542ae1abe61d9f8e38, type: 2}
+  requiredTool: 5
   failHintMessage: Hey, you can't get any hints using that

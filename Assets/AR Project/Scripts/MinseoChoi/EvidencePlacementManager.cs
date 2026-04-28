@@ -21,7 +21,7 @@ public class EvidencePlacementManager : MonoBehaviour
 
     [Header("Placement Offset")]
     [SerializeField] private float _heightOffset = 0.03f;
-    [SerializeField] private float _uniformScale = 3.0f;
+    [SerializeField] private float _uniformScale = 1.0f;
 
     [Header("Debug")]
     [SerializeField] private bool _useCameraForwardPlacement = false;
@@ -148,9 +148,7 @@ public class EvidencePlacementManager : MonoBehaviour
                 return;
             }
 
-            spawnRotation = _lookAtCamera
-                ? GetFacingCameraRotation(spawnPosition)
-                : plane.transform.rotation;
+            spawnRotation = Quaternion.FromToRotation(Vector3.up, plane.normal);
         }
 
         if (!IsFarEnoughFromExistingEvidence(spawnPosition))
@@ -192,9 +190,15 @@ public class EvidencePlacementManager : MonoBehaviour
             anchor.transform.rotation,
             anchor.transform
         );
+        // 1차 로그: 스케일 적용 전 원본 크기 확인
+        LogEvidenceBounds(spawnedEvidence, "BEFORE SCALE");
 
-        spawnedEvidence.transform.localScale = Vector3.one * _uniformScale;
-        spawnedEvidence.transform.localPosition += Vector3.up * _heightOffset;
+        spawnedEvidence.transform.localScale *= _uniformScale;
+        spawnedEvidence.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+        spawnedEvidence.transform.localPosition = Vector3.up * _heightOffset;
+
+        // 2차 로그: 스케일 적용 후 최종 크기 확인
+        LogEvidenceBounds(spawnedEvidence, "AFTER SCALE");
 
         Renderer[] renderers = spawnedEvidence.GetComponentsInChildren<Renderer>(true);
         foreach (Renderer r in renderers)
@@ -322,5 +326,30 @@ public class EvidencePlacementManager : MonoBehaviour
         }
 
         Debug.Log("[Plane] All plane visuals hidden.");
+    }
+
+    private void LogEvidenceBounds(GameObject obj, string label)
+    {
+        Renderer[] renderers = obj.GetComponentsInChildren<Renderer>(true);
+        if (renderers == null || renderers.Length == 0)
+        {
+            Debug.LogWarning($"[Bounds] {label} - {obj.name} has no Renderer.", obj);
+            return;
+        }
+
+        Bounds combinedBounds = renderers[0].bounds;
+        foreach (Renderer r in renderers)
+        {
+            combinedBounds.Encapsulate(r.bounds);
+        }
+
+        Debug.Log(
+            $"[Bounds] {label} - {obj.name} | " +
+            $"size={combinedBounds.size} | " +
+            $"center={combinedBounds.center} | " +
+            $"extents={combinedBounds.extents} | " +
+            $"localScale={obj.transform.localScale}",
+            obj
+        );
     }
 }

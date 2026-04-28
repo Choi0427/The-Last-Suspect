@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
   evidenceName: Blood
   icon: {fileID: 21300000, guid: 9b1a4887f3d98e6498b9d0838e67cc0d, type: 3}
-  description: Descriptions about blood evidence
+  description: "Wiped blood lines point to the window, not the door. Shot angle proves
+    it wasn\u2019t a normal desk suicide."

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
   evidenceName: Hair
   icon: {fileID: 21300000, guid: 5eb97d6a0934f9045af04b768a61c464, type: 3}
-  description: Descriptions about hair evidence
+  description: "Black hair from the floor, male 40\u201350s. Heavy smoke and stress
+    markers"
