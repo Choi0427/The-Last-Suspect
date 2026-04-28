@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EvidenceData
   evidenceName: FIngerprint
   icon: {fileID: 21300000, guid: 6e57110f2b6039344b46669a00272c55, type: 3}
-  description: Descriptions about fingerprint evidence
+  description: Clear fingerprint on the desk edge, high match with Martha. It sits
+    on top of old dust.

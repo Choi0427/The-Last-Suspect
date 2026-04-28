@@ -1455,13 +1455,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1825952103}
-        m_TargetAssemblyTypeName: EvidenceInventoryUI, Assembly-CSharp
-        m_MethodName: ShowEvidence
-        m_Mode: 3
+      - m_Target: {fileID: 883003931}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ShowDescription
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: d7fbd754ec60be04985d26e7f3f46399, type: 2}
+          m_ObjectArgumentAssemblyTypeName: EvidenceData, Assembly-CSharp
           m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2381,13 +2381,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1825952103}
-        m_TargetAssemblyTypeName: EvidenceInventoryUI, Assembly-CSharp
-        m_MethodName: ShowEvidence
-        m_Mode: 3
+      - m_Target: {fileID: 883003931}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ShowDescription
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 7f45d5c2093acc341b6745dacb303110, type: 2}
+          m_ObjectArgumentAssemblyTypeName: EvidenceData, Assembly-CSharp
           m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2753,13 +2753,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1825952103}
-        m_TargetAssemblyTypeName: EvidenceInventoryUI, Assembly-CSharp
-        m_MethodName: ShowEvidence
-        m_Mode: 3
+      - m_Target: {fileID: 883003931}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ShowDescription
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 593721b2e6199e04eb1e357244f7c290, type: 2}
+          m_ObjectArgumentAssemblyTypeName: EvidenceData, Assembly-CSharp
           m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3306,13 +3306,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1825952103}
-        m_TargetAssemblyTypeName: EvidenceInventoryUI, Assembly-CSharp
-        m_MethodName: ShowEvidence
-        m_Mode: 3
+      - m_Target: {fileID: 883003931}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ShowDescription
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 593721b2e6199e04eb1e357244f7c290, type: 2}
+          m_ObjectArgumentAssemblyTypeName: EvidenceData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3380,7 +3380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 883003930}
-  - component: {fileID: 883003929}
+  - component: {fileID: 883003931}
   m_Layer: 0
   m_Name: InventoryManager
   m_TagString: Untagged
@@ -3388,31 +3388,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &883003929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 883003928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be824851d5bcc044d8dd261cd15cd72b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  inventoryPanel: {fileID: 151067445}
-  slots:
-  - {fileID: 867597554}
-  - {fileID: 485472537}
-  - {fileID: 1569899212}
-  - {fileID: 1871158784}
-  - {fileID: 192188505}
-  - {fileID: 672998450}
-  - {fileID: 1204727086}
-  descriptionPanel: {fileID: 0}
-  nameText: {fileID: 1501961307}
-  descText: {fileID: 368757469}
-  detailImage: {fileID: 0}
 --- !u!4 &883003930
 Transform:
   m_ObjectHideFlags: 0
@@ -3428,6 +3403,42 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &883003931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883003928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be824851d5bcc044d8dd261cd15cd72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
+  popupRoot: {fileID: 151067445}
+  hideOnStart: 1
+  uiToHideWhileOpen:
+  - {fileID: 1640340405}
+  - {fileID: 1248769244}
+  - {fileID: 457116505}
+  - {fileID: 1691980181}
+  - {fileID: 811300998}
+  - {fileID: 1717847425}
+  - {fileID: 941941898}
+  - {fileID: 1190756629}
+  inventoryPanel: {fileID: 151067445}
+  slots:
+  - {fileID: 867597554}
+  - {fileID: 485472537}
+  - {fileID: 1569899212}
+  - {fileID: 1871158784}
+  - {fileID: 192188505}
+  - {fileID: 672998450}
+  - {fileID: 1204727086}
+  descriptionPanel: {fileID: 0}
+  nameText: {fileID: 1501961307}
+  descText: {fileID: 368757469}
+  detailImage: {fileID: 1841963704}
 --- !u!1 &895635645
 GameObject:
   m_ObjectHideFlags: 0
@@ -4293,13 +4304,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1825952103}
-        m_TargetAssemblyTypeName: EvidenceInventoryUI, Assembly-CSharp
-        m_MethodName: ShowEvidence
-        m_Mode: 3
+      - m_Target: {fileID: 883003931}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ShowDescription
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: fe5afef0d4ccc604fa6c5099252faec5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: EvidenceData, Assembly-CSharp
           m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4454,9 +4465,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 883003929}
+      - m_Target: {fileID: 883003931}
         m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
-        m_MethodName: ToggleInventory
+        m_MethodName: Open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5357,13 +5368,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1825952103}
-        m_TargetAssemblyTypeName: EvidenceInventoryUI, Assembly-CSharp
-        m_MethodName: ShowEvidence
-        m_Mode: 3
+      - m_Target: {fileID: 883003931}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ShowDescription
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 3e2bb4ca3d5ab054b9bbdc4778700aea, type: 2}
+          m_ObjectArgumentAssemblyTypeName: EvidenceData, Assembly-CSharp
           m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6722,7 +6733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1825952103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6730,7 +6741,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825952102}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8810b84ddd02b3e46ac4440e363c1992, type: 3}
   m_Name: 
@@ -6989,7 +7000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7304,13 +7315,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1825952103}
-        m_TargetAssemblyTypeName: EvidenceInventoryUI, Assembly-CSharp
-        m_MethodName: ShowEvidence
-        m_Mode: 3
+      - m_Target: {fileID: 883003931}
+        m_TargetAssemblyTypeName: InventoryManager, Assembly-CSharp
+        m_MethodName: ShowDescription
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: ed0f0fa850b306542ae1abe61d9f8e38, type: 2}
+          m_ObjectArgumentAssemblyTypeName: EvidenceData, Assembly-CSharp
           m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
