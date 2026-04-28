@@ -2758,7 +2758,7 @@ MonoBehaviour:
         m_MethodName: ShowDescription
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 593721b2e6199e04eb1e357244f7c290, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 941fd5cc6aab2784994e786d739d6c0e, type: 2}
           m_ObjectArgumentAssemblyTypeName: EvidenceData, Assembly-CSharp
           m_IntArgument: 5
           m_FloatArgument: 0
@@ -4800,7 +4800,7 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5015,8 +5015,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 544.2918, y: 1166.4349, z: -96.58011}
-  m_LocalScale: {x: 4, y: 4, z: 4}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 897516870}
   m_Father: {fileID: 0}
@@ -5045,14 +5045,14 @@ MonoBehaviour:
   - {fileID: 8557538239243871055, guid: 1cfa126eb71029a4caaca4c565ef35db, type: 3}
   - {fileID: 8774625714388722213, guid: fea66f8944cba244e96a80f94ce03543, type: 3}
   _minSpawnDistance: 1
-  _minSpawnAngle: 0
+  _minSpawnAngle: 2
   _minPlaneArea: 0.05
   _maxSpawnDistanceFromCamera: 2.5
   _heightOffset: 0.03
-  _uniformScale: 3
+  _uniformScale: 1
   _useCameraForwardPlacement: 0
   _debugForwardDistance: 1
-  _lookAtCamera: 1
+  _lookAtCamera: 0
   _hideAllPlanesAfterEnoughSpawn: 0
   _hideAllPlanesAfterPlacementCount: 1
   requiredTools: 

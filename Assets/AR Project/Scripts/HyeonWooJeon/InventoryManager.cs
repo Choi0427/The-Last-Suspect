@@ -23,6 +23,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject descriptionPanel;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descText;
+    public Image detailImage;
 
     void Awake()
     {
