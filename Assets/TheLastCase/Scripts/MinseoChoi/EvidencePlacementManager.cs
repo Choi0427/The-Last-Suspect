@@ -82,6 +82,34 @@ public class EvidencePlacementManager : MonoBehaviour
         {
             _planeManager.trackablesChanged.RemoveListener(OnPlanesChanged);
         }
+
+        CleanupAnchors();
+    }
+
+    private void CleanupAnchors()
+    {
+        if (_spawnedEvidences == null || _spawnedEvidences.Count == 0)
+        {
+            return;
+        }
+
+        foreach (var info in _spawnedEvidences)
+        {
+            if (info == null) continue;
+
+            if (info.evidenceObject != null)
+            {
+                Destroy(info.evidenceObject);
+            }
+
+            if (info.anchor != null)
+            {
+                Destroy(info.anchor.gameObject);
+            }
+        }
+
+        _spawnedEvidences.Clear();
+        _spawnedByPlane.Clear();
     }
 
     // Called when AR planes are added or updated.

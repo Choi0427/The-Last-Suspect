@@ -79,18 +79,28 @@ public class EndingSceneController : MonoBehaviour
         if (endingPages.Length == 0)
         {
             completed = true;
+            QuitGame();
             return;
         }
 
         if (currentPageIndex >= endingPages.Length - 1)
         {
-            // The scene currently stops on the last page instead of auto-loading somewhere else.
             completed = true;
+            QuitGame();
             return;
         }
 
         currentPageIndex++;
         RefreshCurrentPage();
+    }
+
+    private void QuitGame()
+    {
+    #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+    #else
+            Application.Quit();
+    #endif
     }
 
     private void RefreshCurrentPage()
